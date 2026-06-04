@@ -12,6 +12,7 @@ import test6 from "@/assets/6.jpeg";
 import test7 from "@/assets/7.jpeg";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import IMAGE_CONSTANTS from "@/constants/images";
 
 const ComunidadeAurora = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -199,7 +200,10 @@ const ComunidadeAurora = () => {
       </section>
 
       {/* Pain Points - Glassmorphism Grid */}
-      <section className="relative z-10 pt-16 pb-8 lg:py-24 bg-white/50 backdrop-blur-sm">
+      <section 
+        className="relative z-10 pt-16 pb-8 lg:py-24 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${IMAGE_CONSTANTS.bgLightPattern})` }}
+      >
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16 max-w-3xl mx-auto animate-fade-up">
             <h2 className="font-serif-display text-4xl lg:text-5xl font-bold text-primary mb-6">
@@ -224,7 +228,10 @@ const ComunidadeAurora = () => {
       </section>
 
       {/* Solution/Method Pillars */}
-      <section className="relative z-10 pt-16 pb-12 lg:py-32 overflow-hidden">
+      <section 
+        className="relative z-10 pt-16 pb-12 lg:py-32 overflow-hidden bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${IMAGE_CONSTANTS.bgLightPattern})` }}
+      >
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-[1fr_1.5fr] gap-16 items-start">
             <div className="lg:sticky lg:top-32 text-center lg:text-left">
@@ -256,7 +263,10 @@ const ComunidadeAurora = () => {
       </section>
 
       {/* Journey Timeline */}
-      <section className="relative z-10 py-12 lg:py-24 bg-aurora-cream/30">
+      <section 
+        className="relative z-10 py-12 lg:py-24 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${IMAGE_CONSTANTS.bgLightPattern})` }}
+      >
         <div className="max-w-5xl mx-auto px-6">
           <h2 className="font-serif-display text-4xl lg:text-5xl font-bold text-primary text-center mb-16">
             Sua Jornada de <span className="text-gradient-gold">6 Meses</span>
@@ -323,7 +333,10 @@ const ComunidadeAurora = () => {
       </section>
 
       {/* Feedbacks - Real Testimonials */}
-      <section className="py-16 lg:py-24 px-6 bg-background">
+      <section 
+        className="py-16 lg:py-24 px-6 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${IMAGE_CONSTANTS.bgLightPattern})` }}
+      >
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="font-serif-display text-4xl lg:text-5xl font-bold text-primary mb-16 px-4">
             Histórias de <span className="text-gradient-gold">Transformação</span>
@@ -359,7 +372,10 @@ const ComunidadeAurora = () => {
       </section>
 
       {/* Mentor Section */}
-      <section className="py-16 lg:py-24 px-6 bg-white overflow-hidden">
+      <section 
+        className="py-16 lg:py-24 px-6 overflow-hidden bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${IMAGE_CONSTANTS.bgLightPattern})` }}
+      >
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative animate-fade-up">
@@ -391,7 +407,10 @@ const ComunidadeAurora = () => {
       </section>
 
       {/* Guarantee Section */}
-      <section className="py-16 lg:py-24 px-6 bg-aurora-cream/20 relative">
+      <section 
+        className="py-16 lg:py-24 px-6 relative bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${IMAGE_CONSTANTS.bgLightPattern})` }}
+      >
         <div className="max-w-4xl mx-auto text-center space-y-8 p-8 lg:p-16 rounded-[3rem] border border-aurora-gold/20 bg-white shadow-soft animate-fade-up">
           <div className="w-24 h-24 bg-aurora-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
             <Shield className="w-12 h-12 text-aurora-gold" />
@@ -406,7 +425,10 @@ const ComunidadeAurora = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 lg:py-24 px-6 bg-background">
+      <section 
+        className="py-16 lg:py-24 px-6 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${IMAGE_CONSTANTS.bgLightPattern})` }}
+      >
         <div className="max-w-3xl mx-auto">
           <h2 className="font-serif-display text-4xl font-bold text-primary text-center mb-16">
             Perguntas <span className="text-gradient-gold">Frequentes</span>
@@ -497,7 +519,10 @@ const ComunidadeAurora = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 lg:py-24 px-6 relative">
+      <section 
+        className="py-16 lg:py-24 px-6 relative bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${IMAGE_CONSTANTS.bgLightPattern})` }}
+      >
         <div
           className="max-w-4xl mx-auto rounded-[3rem] p-8 lg:p-20 text-center text-white shadow-2xl relative overflow-hidden"
           style={{ background: 'var(--gradient-gold)' }}

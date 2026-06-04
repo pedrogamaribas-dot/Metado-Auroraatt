@@ -52,6 +52,17 @@ export default {
           warm: "hsl(var(--aurora-warm))",
           earth: "hsl(var(--aurora-earth))",
           cream: "hsl(var(--aurora-cream))",
+          // Despertar da Aurora v2 exact theme colors
+          bgLight: "#FFF9EC",
+          bgDark: "#2C1A0E",
+          textDark: "#3B2314",
+          textMid: "#7A5C44",
+          textLight: "#C4A882",
+          brandGold: "#AE8625",
+          brandGoldLight: "#F7EF8A",
+          brandNude: "#B67539",
+          glassLight: "rgba(255, 249, 236, 0.60)",
+          glassBorder: "rgba(174, 134, 37, 0.18)"
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -63,6 +74,10 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      fontFamily: {
+        cormorant: ["'Cormorant Garamond'", "serif"],
+        montserrat: ["'Montserrat'", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

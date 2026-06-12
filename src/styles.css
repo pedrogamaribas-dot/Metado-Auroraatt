@@ -1,0 +1,215 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-cream: var(--cream);
+  --color-brown: var(--brown);
+  --color-brown-soft: var(--brown-soft);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-rose: var(--rose);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-display: "Cormorant Garamond", serif;
+  --font-body: "Inter", sans-serif;
+  
+  /* Aurora specifics matching tailwind v4 theme extensions */
+  --color-aurora-gold: oklch(0.78 0.12 78);
+  --color-aurora-gold-light: oklch(0.88 0.07 82);
+  --color-aurora-warm: oklch(0.48 0.06 40);
+  --color-aurora-earth: oklch(0.38 0.045 50);
+  --color-aurora-cream: oklch(0.972 0.024 88);
+
+  /* Hex mapping matches */
+  --color-aurora-bg-light: #FFF9EC;
+  --color-aurora-bg-dark: #2C1A0E;
+  --color-aurora-text-dark: #3B2314;
+  --color-aurora-text-mid: #7A5C44;
+  --color-aurora-text-light: #C4A882;
+  --color-aurora-brand-gold: #AE8625;
+  --color-aurora-brand-gold-light: #F7EF8A;
+  --color-aurora-brand-nude: #B67539;
+  
+  --font-cormorant: "Cormorant Garamond", serif;
+  --font-montserrat: "Montserrat", sans-serif;
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Despertar da Aurora tokens */
+  --cream: oklch(0.972 0.024 88);          /* #FFF9EC */
+  --brown: oklch(0.235 0.04 50);           /* #2C1A0E */
+  --brown-soft: oklch(0.38 0.045 50);      /* texto secundário */
+  --gold: oklch(0.78 0.12 78);             /* dourado */
+  --gold-soft: oklch(0.88 0.07 82);
+  --rose: oklch(0.78 0.07 30);
+
+  --background: var(--cream);
+  --foreground: var(--brown);
+
+  --card: oklch(0.98 0.015 88);
+  --card-foreground: var(--brown);
+  --popover: var(--cream);
+  --popover-foreground: var(--brown);
+  --primary: var(--brown);
+  --primary-foreground: var(--cream);
+  --secondary: oklch(0.93 0.025 75);
+  --secondary-foreground: var(--brown);
+  --muted: oklch(0.93 0.02 75);
+  --muted-foreground: var(--brown-soft);
+  --accent: var(--gold);
+  --accent-foreground: var(--brown);
+  --destructive: oklch(0.55 0.2 27);
+  --destructive-foreground: var(--cream);
+  --border: oklch(0.88 0.03 75);
+  --input: oklch(0.88 0.03 75);
+  --ring: var(--gold);
+
+  /* Aurora Gradients and Specifics matching original */
+  --gradient-aurora: linear-gradient(135deg, #AE8625 0%, #B67539 100%);
+  --gradient-gold: linear-gradient(135deg, #AE8625 0%, #8C6215 100%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+  
+  .font-serif-display {
+    font-family: "Cormorant Garamond", serif;
+  }
+  .font-sans-clean {
+    font-family: "Montserrat", sans-serif;
+  }
+  .font-cormorant {
+    font-family: "Cormorant Garamond", serif;
+  }
+  .font-montserrat {
+    font-family: "Montserrat", sans-serif;
+  }
+}
+
+/* Custom visual utilities from previous build */
+.glass-card-light {
+  background: rgba(255, 249, 236, 0.60);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(174, 134, 37, 0.18);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(59, 35, 20, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.glass-card-dark {
+  background: rgba(44, 26, 14, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(174, 134, 37, 0.22);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(174, 134, 37, 0.1);
+}
+
+.glass-navbar {
+  background: rgba(255, 249, 236, 0.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(174, 134, 37, 0.15);
+}
+
+/* Bokeh Particle Animation */
+@keyframes bokehPulse {
+  0% {
+    transform: scale(0.8);
+    opacity: var(--base-op-min, 0.05);
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: var(--base-op-max, 0.20);
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: var(--base-op-min, 0.05);
+  }
+}
+
+.animate-bokeh-pulse {
+  animation: bokehPulse var(--bokeh-duration, 5s) ease-in-out infinite;
+  animation-delay: var(--bokeh-delay, 0s);
+  will-change: transform, opacity;
+}
+
+/* Symmetrical gradient divider pulse */
+@keyframes pulse-opacity {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-pulse-divider {
+  animation: pulse-opacity 3s infinite ease-in-out;
+  will-change: opacity;
+}
+
+/* Selection highlighting */
+::selection {
+  background-color: rgba(174, 134, 37, 0.3);
+  color: inherit;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}

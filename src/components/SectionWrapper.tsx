@@ -9,6 +9,7 @@ interface SectionWrapperProps {
   children: React.ReactNode;
   id?: string;
   className?: string;
+  paddingClassName?: string;
   variant?: 'light' | 'dark';
   style?: React.CSSProperties;
 }
@@ -17,10 +18,12 @@ export const SectionWrapper: React.FC<SectionWrapperProps> = ({
   children,
   id,
   className = "",
+  paddingClassName,
   variant = 'light',
   style,
 }) => {
   const bgStyle = variant === 'light' ? "" : "bg-[#2C1A0E]";
+  const sectionPadding = paddingClassName ?? 'py-28';
   const lightBgStyle = variant === 'light' ? {
     backgroundImage: `url(${IMAGE_CONSTANTS.bgLightPattern})`,
     backgroundSize: 'cover',
@@ -30,7 +33,7 @@ export const SectionWrapper: React.FC<SectionWrapperProps> = ({
   return (
     <motion.section
       id={id}
-      className={`relative w-full py-28 px-6 md:px-16 lg:px-24 overflow-hidden ${bgStyle} ${className}`}
+      className={`relative w-full ${sectionPadding} px-6 md:px-16 lg:px-24 overflow-hidden ${bgStyle} ${className}`}
       style={{ ...lightBgStyle, ...style }}
       initial={{ opacity: 0, y: 45, scale: 0.97, filter: "blur(8px)" }}
       whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}

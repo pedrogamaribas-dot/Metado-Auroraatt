@@ -13,8 +13,19 @@ import test7 from "@/assets/7.jpeg";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import IMAGE_CONSTANTS from "@/constants/images";
+import { createFileRoute } from "@tanstack/react-router";
 
-const ComunidadeAurora = () => {
+export const Route = createFileRoute("/comunidade-aurora")({
+  head: () => ({
+    meta: [
+      { title: "Comunidade Aurora Circle — Mentoria Exclusiva" },
+      { name: "description", content: "Em 6 meses, organize sua vida emocional, crie relacionamentos saudáveis e viva em plenitude com fundamentos da psicologia e da fé cristã." }
+    ]
+  }),
+  component: ComunidadeAurora,
+});
+
+export function ComunidadeAurora() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const handleWhatsAppClick = (message: string = "Olá! Gostaria de saber mais sobre a Comunidade Aurora Circle.") => {
@@ -131,7 +142,6 @@ const ComunidadeAurora = () => {
 
   return (
     <div className="min-h-screen bg-background font-sans-clean w-full overflow-x-hidden">
-
 
       {/* Hero Section */}
       <section className="hero-mobile-fix relative z-10 pt-12 pb-12 lg:pt-32 lg:pb-32 px-6">
@@ -550,6 +560,6 @@ const ComunidadeAurora = () => {
       <WhatsAppFloat />
     </div>
   );
-};
+}
 
 export default ComunidadeAurora;

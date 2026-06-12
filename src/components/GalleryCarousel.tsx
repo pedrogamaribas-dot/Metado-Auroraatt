@@ -119,10 +119,10 @@ export const GalleryCarousel: React.FC = () => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center justify-center relative overflow-visible py-16 text-center select-none perspective-[1200px]">
+    <div className="w-full flex flex-col items-center justify-center relative overflow-visible py-8 text-center select-none perspective-[1200px]">
       
       {/* 1. Header Typography */}
-      <div className="flex flex-col items-center max-w-2xl px-6 mb-16 relative z-20">
+      <div className="flex flex-col items-center max-w-2xl px-6 mb-14 relative z-20">
         <span className="font-montserrat text-[10px] font-normal tracking-[0.25em] text-[#AE8625] uppercase mb-4">
           GALERIA
         </span>
@@ -196,29 +196,7 @@ export const GalleryCarousel: React.FC = () => {
                   className="absolute inset-0 w-full h-full object-cover object-center z-0 rounded-2xl transition-transform duration-700 group-hover:scale-[1.03] select-none pointer-events-none" 
                 />
 
-                {/* Subtle dark gradient overlay for text readability */}
-                <div 
-                  className="absolute inset-0 z-10 pointer-events-none rounded-2xl" 
-                  style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 50%)' }}
-                />
-
-                {/* Overlays on top of card */}
-                <div className="absolute inset-0 z-20 flex flex-col justify-between p-6 md:p-8">
-                  {/* Top Label */}
-                  <span className={`font-montserrat text-[8.5px] font-semibold tracking-[0.25em] text-[#AE8625] uppercase self-start bg-[#1A0F08]/75 backdrop-blur-[2px] px-2.5 py-1 rounded-[2px] transition-all duration-300 ${
-                    cardStyle.isActive ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-                  }`}>
-                    {item.label}
-                  </span>
-
-
-                  {/* Bottom Text */}
-                  <p className={`font-cormorant text-base md:text-lg font-light text-[#FFF9EC] text-left leading-snug transition-all duration-500 ${
-                    cardStyle.isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                  }`}>
-                    {item.alt}
-                  </p>
-                </div>
+                {/* Clean image cards without text overlays */}
               </motion.div>
             );
           })}
